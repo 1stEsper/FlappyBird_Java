@@ -18,6 +18,7 @@ public class Animation {
     private int NumOfFrame = 0;
     private int CurrentFrame = 0;
     
+    //Mesure dde tinh thoi gian chuyen hoat anh (theo mili second)
     public Animation(long mesure){
         this.mesure = mesure;
     }
@@ -39,7 +40,7 @@ public class Animation {
         frames[NumOfFrame] = sprite;
         NumOfFrame++;
     }
-    
+    //rotation la chi huong cua con chim, neu =0 thi no giu nguyen huong, con neu = -1 thi no se huong dau len 
     public void PaintAnims(int x, int y, BufferedImage image, Graphics2D g2, int anchor, float rotation){
         frames[CurrentFrame].Paint(x, y, image, g2, anchor, rotation);
     }
