@@ -63,6 +63,7 @@ public class FlappyBird extends GameScreen {
 	private void resetGame() {
 		bird.setPos(350, 250);
 		bird.setVt(0);
+		bird.setLive(true);
 	}
 
 	@Override
@@ -71,11 +72,18 @@ public class FlappyBird extends GameScreen {
 			resetGame(); 
 		}
 		else if(CurrentScreen==GAMEPLAY_SCREEN) {
-			bird_anim.Update_Me(deltaTime); 
+			if(bird.getLive())
+				bird_anim.Update_Me(deltaTime); 
 			bird.update(deltaTime);
 			ground.Update();
 			
 			chimneyGroup.update(); 
+			
+			for(int i=0; i<ChimneyGroup.SIZE; i++) {
+				if(bird.getRect().intersects(chimneyGroup.getChimney(i).getRect()))
+					bird.setLive(false);
+					
+			}
 			
 			//Xet vi tri cua con chim, neu cham dat thi se hien thi man hinh game over 
 			if(bird.getPosY() + bird.getH() > ground.getYGround())
@@ -124,7 +132,8 @@ public class FlappyBird extends GameScreen {
 				CurrentScreen = GAMEPLAY_SCREEN;
 			}
 			else if (CurrentScreen==GAMEPLAY_SCREEN) {
-				bird.fly();  
+				if(bird.getLive())
+					bird.fly();  
 			}
 			else if (CurrentScreen==GAMEOVER_SCREEN){
 				CurrentScreen = BEGIN_SCREEN;

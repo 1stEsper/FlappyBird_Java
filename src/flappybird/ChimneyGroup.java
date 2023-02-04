@@ -16,6 +16,12 @@ public class ChimneyGroup {
 	
 	private BufferedImage chimneyImage, chimneyImage2; 
 	
+	public static int SIZE=6;  
+	
+	public Chimney getChimney(int i) {
+		return chimneys.get(i);
+	}
+	
 	public ChimneyGroup() {
 		try {
 			chimneyImage=ImageIO.read(new File ("Assets/chimney.png"));
@@ -27,7 +33,7 @@ public class ChimneyGroup {
 		Chimney cn; 
 		
 		
-		for (int i=0; i<3; i++) {
+		for (int i=0; i<SIZE/2; i++) {
 			//Moi vong lap se push 1 capong khoi len 
 			cn = new Chimney(830+i*300,350,74,400);
 			chimneys.push(cn);
@@ -39,7 +45,7 @@ public class ChimneyGroup {
 	}
 	
 	public void update() {
-		for (int i=0; i<6; i++) {
+		for (int i=0; i<SIZE/2; i++) {
 			//Tuong duong voi ham chimneys.get(i).setPosX(chimneys.get(i).getPosX()-2);
 			chimneys.get(i).update(); 
 		}
