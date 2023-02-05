@@ -45,7 +45,7 @@ public class ChimneyGroup {
 	}
 	
 	public void update() {
-		for (int i=0; i<SIZE/2; i++) {
+		for (int i=0; i<SIZE; i++) {
 			//Tuong duong voi ham chimneys.get(i).setPosX(chimneys.get(i).getPosX()-2);
 			chimneys.get(i).update(); 
 		}

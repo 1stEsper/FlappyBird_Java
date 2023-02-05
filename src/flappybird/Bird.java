@@ -44,8 +44,8 @@ public class Bird extends Objects {
 		//nen do do vi tri cung phai tang them "vt"
 		this.setPosY(this.getPosY()+vt);
 		
-//		//Cap nhat vi tri cua rect"con chim" lien tuc
-//		this.rect.setLocation((int)this.getPosX(), (int)this.getPosY());
+		//Cap nhat vi tri cua rect"con chim" lien tuc
+		this.rect.setLocation((int)this.getPosX(), (int)this.getPosY());
 		
 		//Khi van toc vt<0, thi no dang di len ~dang bay va nguoc lai
 		if(vt<0) isFlying = true; 
