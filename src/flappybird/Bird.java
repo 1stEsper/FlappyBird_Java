@@ -1,6 +1,8 @@
 package flappybird;
 
 import pkg2dgamesframework.Objects;
+import pkg2dgamesframework.SoundPlayer;
+
 import java.awt.*;
 
 public class Bird extends Objects {
@@ -13,6 +15,9 @@ public class Bird extends Objects {
 	private Rectangle rect; 
 	
 	private boolean isLive =true; 
+	
+	private SoundPlayer flapSound, bupSound, getMoneySound;
+	
 	
 	//Lay toa do cua chim
 	public Bird(int x, int y, int w, int h) {

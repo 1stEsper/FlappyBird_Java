@@ -18,7 +18,7 @@ public class FlappyBird extends GameScreen {
 	
 	private BufferedImage chimney; 
 	
-	public static float g=0.1f; // tao bien gia toc 
+	public static float g=0.15f; // tao bien gia toc 
 	
 	private Bird bird; 
 	private Ground ground; 
