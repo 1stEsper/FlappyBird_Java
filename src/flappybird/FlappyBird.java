@@ -68,6 +68,7 @@ public class FlappyBird extends GameScreen {
 		bird.setVt(0);
 		bird.setLive(true);
 		Point=0;
+		chimneyGroup.resetChimneys();
 	}
 
 	@Override
@@ -116,6 +117,8 @@ public class FlappyBird extends GameScreen {
 	//Method nay de ve cac object ra man hinh tro choi
 	@Override
 	public void GAME_PAINT(Graphics2D g2) {
+		g2.setColor(Color.decode("#b8daef"));
+		g2.fillRect(0,0,MASTER_WIDTH,MASTER_HEIGHT);		
 		//Ve ong khoi
 		chimneyGroup.paint(g2);
 		

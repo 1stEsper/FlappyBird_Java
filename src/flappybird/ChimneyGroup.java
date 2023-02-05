@@ -64,6 +64,23 @@ public class ChimneyGroup {
 		}
 	}
 	
+	//Khoi tao lai ong khoi, de khi moi lan reset game thi no se dua lai vi tri ban ddau 
+	public void resetChimneys() {
+		chimneys = new QueueList<Chimney>(); 
+		Chimney cn; 
+		
+		
+		for (int i=0; i<SIZE/2; i++) {
+			//Moi vong lap se push 1 capong khoi len 
+			cn = new Chimney(830+i*300,350,74,400);
+			chimneys.push(cn);
+			
+			cn = new Chimney(830+i*300,-300,74,400);
+			chimneys.push(cn);
+			
+		}
+	}
+	
 	public void paint(Graphics2D g2) {
 		for (int i=0; i<6; i++) {
 			if (i%2==0)
