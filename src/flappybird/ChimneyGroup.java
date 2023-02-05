@@ -54,10 +54,12 @@ public class ChimneyGroup {
 			Chimney cn; 
 			cn = chimneys.pop(); 
 			cn.setPosX(chimneys.get(4).getPosX()+300);
+			cn.setIsBehindBird(false);
 			chimneys.push(cn);
 			
 			cn = chimneys.pop(); 
 			cn.setPosX(chimneys.get(4).getPosX());
+			cn.setIsBehindBird(false);
 			chimneys.push(cn);
 		}
 	}

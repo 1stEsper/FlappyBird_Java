@@ -6,6 +6,9 @@ import java.awt.*;
 public class Chimney extends Objects {
 	private Rectangle rect; 
 	
+	//XD con chim di qua ong khoi hay chua, false nghia la chim van chua bay qua
+	private boolean isBehindBird = false;
+	
 	public Chimney(int x, int y, int w, int h) {
 		super(x, y, w, h);
 		rect = new Rectangle(x, y, w, h);
@@ -21,6 +24,13 @@ public class Chimney extends Objects {
 	
 	public Rectangle getRect() {
 		return rect;
+	}
+	
+	public void setIsBehindBird(boolean b) {
+		isBehindBird = b; 
+	}
+	public boolean getIsBehindBird() {
+		return isBehindBird; 
 	}
 
 }

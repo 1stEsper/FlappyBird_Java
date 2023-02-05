@@ -25,6 +25,9 @@ public class FlappyBird extends GameScreen {
 	
 	private ChimneyGroup chimneyGroup; 
 	
+	private int Point=0; 
+	
+	
 	private int BEGIN_SCREEN=0; 
 	private int GAMEPLAY_SCREEN = 1;
 	private int GAMEOVER_SCREEN =2;
@@ -64,6 +67,7 @@ public class FlappyBird extends GameScreen {
 		bird.setPos(350, 250);
 		bird.setVt(0);
 		bird.setLive(true);
+		Point=0;
 	}
 
 	@Override
@@ -82,6 +86,17 @@ public class FlappyBird extends GameScreen {
 			for(int i=0; i<ChimneyGroup.SIZE; i++) {
 				if(bird.getRect().intersects(chimneyGroup.getChimney(i).getRect()))
 					bird.setLive(false);
+					
+			}
+			
+			for(int i=0; i<ChimneyGroup.SIZE; i++) {
+				//i%2==0 o day nham muuc dich tang Point len chi 1 diem khi di qua 1 cap ong khoi, 
+				//(neu k co no thi sau moi lan qua 1 cap ong khoi thi Point se tang len 2 diem)
+				if(bird.getPosX() > chimneyGroup.getChimney(i).getPosX() && !chimneyGroup.getChimney(i).getIsBehindBird()&& i%2==0) {
+					Point++; 
+					chimneyGroup.getChimney(i).setIsBehindBird(true); 
+				}
+					
 					
 			}
 			
@@ -122,6 +137,9 @@ public class FlappyBird extends GameScreen {
 			g2.setColor(Color.red);
 			g2.drawString("Press space turn back begin screen ", 200,300); 
 		}
+		
+		g2.setColor(Color.black);
+		g2.drawString("Point: "+Point,20,50); 
 		
 	}
 
